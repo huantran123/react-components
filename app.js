@@ -8,7 +8,13 @@ class GroceryListItem extends React.Component {
 
   onGroceryItemMouseOver() {
     this.setState({
-      hovered: !this.state.hovered
+      hovered: true
+    })
+  }
+
+  onGroceryItemMouseOut() {
+    this.setState({
+      hovered: false
     })
   }
 
@@ -18,7 +24,7 @@ class GroceryListItem extends React.Component {
     };
 
     return (
-      <li style={style} onMouseOver={this.onGroceryItemMouseOver.bind(this)}>{this.props.item}</li>
+      <li style={style} onMouseOver={this.onGroceryItemMouseOver.bind(this)} onMouseOut={this.onGroceryItemMouseOut.bind(this)}>{this.props.item}</li>
     );
   }
 }
